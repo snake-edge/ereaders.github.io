@@ -1,0 +1,160 @@
+/* Login Page Specific Styles */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 250px);
+    padding: 40px 20px;
+    background-color: #e6f2e6; /* Light Green */
+}
+
+.auth-card { 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border: 2px solid #D3D3D3; /* Light Gray border */
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-icon {
+    background-color: rgba(173, 255, 47, 0.2); /* Light Green with transparency */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.auth-icon i {
+    font-size: 28px;
+    color: #004d00; /* Deep Green */
+}
+
+.auth-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #004d00; /* Deep Green */
+}
+
+.auth-header p {
+    color: #666;
+}
+
+.auth-form {
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    color: #004d00; /* Deep Green */
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-input:focus {
+    border-color: #004d00;
+    outline: none;
+}
+
+/* Password Section */
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: right;
+    margin-top: 8px;
+}
+
+.forgot-password a {
+    color: #004d00; /* Deep Green */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+    color: #002600; /* Darker Green */
+}
+
+/* Button */
+.btn-block { 
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    background: #004d00; /* Deep Green */
+    color: #FFD700; /* Gold */
+    padding: 10px;
+    border: none; /* Removed the yellow border */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-block:hover {
+    background: #ADFF2F; /* Light Green */
+    color: #004d00;
+    transform: translateY(-2px);
+}
+
+/* Error Messages */
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #004d00; /* Deep Green */
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+    color: #002600; /* Darker Green */
+}

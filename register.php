@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - E-Readers Library</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon" />
+</head>
+<body>
+    <header>
+        <div class="logo">E-Readers</div>
+        <nav class="desktop-nav">
+            <a href="index.php">Home</a>
+            <a href="index.php#about">About Us</a>
+            <a href="index.php#contact">Contact</a>
+            <a href="login.php">Login</a>
+            <a href="register.php" class="active register-btn">Register</a>
+        </nav>
+    </header>
+
+    <main class="register-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h2>Create Your E-Readers Account</h2>
+                <p>Sign up to start your reading journey</p>
+            </div>
+
+            <form id="registerForm" class="auth-form" action="backend_register.php" method="POST">
+                <div class="form-group">
+                    <label for="full_name" class="form-label">Full Name</label>
+                    <input type="text" name="full_name" id="fullName" class="form-input" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" name="email" id="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" name="password" id="password" class="form-input password-input" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password', 'passwordToggleIcon')">
+                            <i id="passwordToggleIcon" class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" name="confirmPassword" id="confirmPassword" class="form-input password-input" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword', 'confirmPasswordToggleIcon')">
+                            <i id="confirmPasswordToggleIcon" class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p id="passwordError" style="color: red; display: none;">Passwords do not match.</p>
+
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.php">Sign in</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const errorMessage = document.getElementById("passwordError");
+
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                errorMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "none";
+            }
+        });
+
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+    </script>
+</body>
+</html>
